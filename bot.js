@@ -149,6 +149,10 @@ bot.catch((err, ctx) => {
   console.error("Общая ошибка бота:", err.message);
 });
 
+const http = require('http');
+const PORT = process.env.PORT || 3000;
+http.createServer((req, res) => res.end('Bot is running')).listen(PORT);
+
 bot.launch();
 console.log("Бот запущен");
 
